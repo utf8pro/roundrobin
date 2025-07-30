@@ -2,7 +2,7 @@ export type TRoundRobin<T = unknown> = {
   next(): T
 }
 
-export function roundrobin<T = unknown>(values: T[]): TRoundRobin {
+export function roundrobin<T = unknown>(values: T[]): TRoundRobin<T> {
   if (values.length === 0) {
     throw new Error("Cannot initialize round robin with empty values")
   }
